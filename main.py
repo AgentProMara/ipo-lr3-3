@@ -1,13 +1,23 @@
-day = int(input("Введите день: "))
-month = int(input("Введите месяц: "))
-
-if (month == 3 and day >= 1) or (month == 4) or (month == 5) or (month == 6 and day <= 31):
-    season = "Весна"
-elif (month == 6 and day >= 1) or (month == 7) or (month == 8) or (month == 8 and day <= 31):
-    season = "Лето"
-elif (month == 9 and day >= 1) or (month == 10) or (month == 11 and day <= 30):
-    season = "Осень"
+# Запрашиваем у пользователя ввод дня и сохраняем его в переменную day
+day = int(input("Введи день:"))
+# Запрашиваем у пользователя ввод номера месяца и сохраняем его в переменную month
+month = int(input("Введи номер месяца:"))
+# Проверяем, соответствует ли введенная дата зимнему сезону
+if (day >= 1 and day <= 31 and month == 12) or (day >= 1 and day <= 31 and month == 1) or (day >= 1 and day <= 28 and month == 2):
+    # Если да, выводим сообщение, что это зима
+    print("Сезон зима")
+# Проверяем, соответствует ли введенная дата весеннему сезону
+elif (day >= 1 and day <= 31 and month == 3) or (day >= 1 and day <= 30 and month == 4) or (day >= 1 and day <= 31 and month == 5):
+    # Если да, выводим сообщение, что это весна
+    print("Сезон весна")
+# Проверяем, соответствует ли введенная дата летнему сезону
+elif (day >= 1 and day <= 30 and month == 6) or (day >= 1 and day <= 31 and month == 7) or (day >= 1 and day <= 31 and month == 8):
+    # Если да, выводим сообщение, что это лето
+    print("Сезон лето")
+# Проверяем, соответствует ли введенная дата осеннему сезону
+elif (day >= 1 and day <= 30 and month == 9) or (day >= 1 and day <= 31 and month == 10) or (day >= 1 and day <= 30 and month == 11):
+    # Если да, выводим сообщение, что это осень
+    print("Сезон осень")
+# Если введенная дата не соответствует ни одному из сезонов, выводим сообщение об ошибке
 else:
-    season = "Зима"
-
-print(f"Дата {day}.{month} относится к сезону: {season}")
+    print("Неправильная дата")
